@@ -1,0 +1,5 @@
+class TwoPair < BaseHand
+def valid?
+frequency_map.keys.length == 3
+end
+end
