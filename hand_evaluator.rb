@@ -1,7 +1,36 @@
-class Hand
-  attr_reader :card, :deck
-  
-  def straight_flush?
+class HandEvaluator
+  def initialize(hand)
+    @hand - hand
+  end
+
+  def evaluate
+  	ranks = []
+  	suits = []
+  	hand.each do |card|
+  		ranks << card.rank
+  		suits << card.suit
+    end
+
+    if straight_flush?
+    	"Straight Flush"
+    elsif four_of_a_kind?
+    	"Four of a Kind"
+    elsif full_house?
+    	"Full House"
+    elsif flush?
+    	"Flush"
+    elsif straight?
+    	"straight"
+    elsif three_of_a_kind?
+		"Three of a Kind"
+	elsif two_pair?
+		"Two Pair"
+	elsif one_pair?
+		"One Pair"
+	elsif high_card?
+		"High Card"	    		    
+    end
+      def straight_flush?
    flush? && straight?
   end
 
@@ -70,4 +99,7 @@ def build_frequency_map
       else
         hash [rank] = 1
       end
+end
+
+  end
 end

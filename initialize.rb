@@ -1,5 +1,10 @@
 require "./card"
 require "./deck"
+require "./player"
+require "./dealer"
+require "./pokr"
+require "./game_results_printer"
 
-deck = Deck.new
-deck.display
+
+poker=Poker.new
+poker.play
