@@ -1,4 +1,6 @@
 class Hand
+  attr_reader :card, :deck
+
   def royal_flush?
     return @cards if straight_flush? and @cards.map(&:value).max == Poker::values.max
   end
